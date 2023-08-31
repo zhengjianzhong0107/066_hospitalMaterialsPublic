@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YiyuanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YiyuanEntity" id="yiyuanMap">
+        <result property="yiyuanzhanghao" column="yiyuanzhanghao"/>
+        <result property="mima" column="mima"/>
+        <result property="yiyuanmingcheng" column="yiyuanmingcheng"/>
+        <result property="yiyuanfengmian" column="yiyuanfengmian"/>
+        <result property="yiyuandizhi" column="yiyuandizhi"/>
+        <result property="yiyuandengji" column="yiyuandengji"/>
+        <result property="yiyuandianhua" column="yiyuandianhua"/>
+        <result property="yiyuanxiangqing" column="yiyuanxiangqing"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YiyuanVO" >
+		SELECT * FROM yiyuan  yiyuan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YiyuanVO" >
+		SELECT  yiyuan.* FROM yiyuan  yiyuan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YiyuanView" >
+
+		SELECT  yiyuan.* FROM yiyuan  yiyuan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YiyuanView" >
+		SELECT * FROM yiyuan  yiyuan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YubeizhanghuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YubeizhanghuEntity" id="yubeizhanghuMap">
+        <result property="zichanmingcheng" column="zichanmingcheng"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="beizhuxinxi" column="beizhuxinxi"/>
+        <result property="dengjishijian" column="dengjishijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YubeizhanghuVO" >
+		SELECT * FROM yubeizhanghu  yubeizhanghu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YubeizhanghuVO" >
+		SELECT  yubeizhanghu.* FROM yubeizhanghu  yubeizhanghu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YubeizhanghuView" >
+
+		SELECT  yubeizhanghu.* FROM yubeizhanghu  yubeizhanghu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YubeizhanghuView" >
+		SELECT * FROM yubeizhanghu  yubeizhanghu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
